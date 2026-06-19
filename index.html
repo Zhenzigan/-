@@ -1,1 +1,89 @@
-
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>镇氏家族志</title>
+  <style>
+    :root{--ink:#25211d;--muted:#76685b;--paper:#fbf6ed;--line:#e0d2bf;--red:#a6422f;--green:#275f5d;--gold:#b58535}
+    *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+    header{position:sticky;top:0;background:#3b2d25;color:#fff;padding:14px 6vw;display:flex;justify-content:space-between;gap:20px;align-items:center;z-index:2}
+    .brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:44px;height:44px;background:var(--red);border:2px solid #fff;font:700 28px KaiTi,serif}
+    nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}a{color:inherit;text-decoration:none}
+    .hero{padding:92px 6vw 96px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 80% 20%,rgba(181,133,53,.45),transparent 38%)}
+    .hero h1{margin:0 0 14px;font:700 clamp(48px,10vw,104px) KaiTi,serif}.hero p{max-width:760px;font-size:20px;color:#fff4e6}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:11px 20px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:700}.btn.primary{background:var(--red);border-color:var(--red)}
+    section{padding:58px 6vw;border-bottom:1px solid var(--line)}.k{color:var(--gold);font-weight:700;font-size:13px}h2{font-size:34px;margin:6px 0 16px}h3{font-size:22px;margin:0 0 10px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px}
+    .card{background:#fffaf4;border:1px solid var(--line);padding:24px;box-shadow:0 8px 24px rgba(40,28,20,.07)}.notice{border-left:5px solid var(--red)}.notice.green{border-left-color:var(--green)}
+    .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.meta div{background:#fff;border:1px solid var(--line);padding:20px}.meta span{display:block;color:var(--muted);font-size:13px}.meta strong{font-size:20px}
+    .paper{max-width:1050px;background:#fffaf1;border:1px solid rgba(181,133,53,.35);padding:34px;box-shadow:0 14px 38px rgba(40,28,20,.12)}
+    .list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.list div{background:#fff;border:1px solid var(--line);padding:20px}.list p{margin:.3em 0;color:var(--muted)}
+    .sign{text-align:right;font-weight:700}.muted{color:var(--muted)}footer{padding:30px 6vw;background:#201815;color:#fff}
+    @media(max-width:850px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家族志</strong><br><small>家族记忆与族亲联络平台</small></span></a>
+    <nav><a href="#notice">家族通知</a><a href="#jobs">就业信息</a><a href="#council">理事会</a><a href="#collect">资料征集</a></nav>
+  </header>
+  <main id="top">
+    <div class="hero">
+      <div class="k">镇氏族人共同的家族档案</div>
+      <h1>镇氏家族志</h1>
+      <p>整理家族历史，保存族谱资料，发布族亲动态，传承家风家训，联络四方镇氏族亲。</p>
+      <div class="btns"><a class="btn primary" href="#jobs">查看招聘</a><a class="btn" href="#collect">提交资料</a></div>
+    </div>
+    <section id="notice" class="two">
+      <div><div class="k">家族通知</div><h2>近期事项</h2><p class="muted">这里发布家族聚会、祭祖、修谱、资料征集、就业信息等族内消息。</p></div>
+      <div class="grid" style="grid-template-columns:1fr">
+        <article class="card notice"><p class="muted">2026.06.19</p><h3>上海招聘实习生与应届生</h3><p>长三角分会现面向族内招聘多名实习生和应届生，工作方向为人工智能算力相关技术与销售。</p></article>
+        <article class="card notice green"><p class="muted">2026.06.19</p><h3>镇氏家族资料征集启动</h3><p>面向各地族亲征集族谱、碑文、祖籍线索、字辈排行、老照片和长辈口述故事。</p></article>
+      </div>
+    </section>
+    <section id="jobs">
+      <div class="k">就业信息</div><h2>上海招聘实习生和应届生</h2>
+      <p class="muted">为了镇氏家族的繁荣昌盛，现面向族内青年发布上海就业机会。请各位家长、同学和族亲相互转告。</p>
+      <div class="two">
+        <div class="meta">
+          <div><span>地点</span><strong>上海</strong></div>
+          <div><span>对象</span><strong>实习生、应届生优先</strong></div>
+          <div><span>学历</span><strong>大专、本科等均可</strong></div>
+          <div><span>方向</span><strong>人工智能算力技术与销售</strong></div>
+        </div>
+        <article class="card">
+          <h3>岗位说明</h3>
+          <p>工作内容主要围绕人工智能算力相关业务，包含技术支持与销售工作，销售方向以互联网、微信、电话等方式为主。</p>
+          <p>欢迎懂 IT 技术、喜欢销售、愿意学习人工智能算力行业的族内青年报名。请有意向的家长和同学准备个人简历，私信联系。</p>
+          <p>有今年毕业的大专、本科学生，或正在寻找就业机会的镇氏族亲，请与长三角分会会长 <strong>镇祝华</strong> 联系。</p>
+          <p><strong>机会难得，望各位族人相互转告。</strong></p>
+        </article>
+      </div>
+    </section>
+    <section id="council">
+      <div class="paper">
+        <div class="k">家族公告</div><h2>关于调整镇氏茂八公理事会的通知</h2>
+        <p>各位理事、各位宗亲：</p>
+        <p>为确保镇氏家族各项工作的稳定、持续发展，现将调整后的理事会给予公示，望各位宗亲一如既往地关照和支持。</p>
+        <div class="list">
+          <div><h3>理事长及副理事长</h3><p>理事长：镇真炎，负责全面工作。</p><p>副理事长：镇祝华，负责三项活动。</p><p>副理事长：镇祥威，负责财务工作。</p><p>副理事长：镇高才，负责法律方面。</p><p>副理事长：镇北纬，负责资料收集，协助理事长。</p></div>
+          <div><h3>理事及分会会长</h3><p>镇松平：西斋分会。</p><p>镇祥鳌：花园洲分会。</p><p>镇高才兼镇祝清：新江口分会。</p><p>镇大军、镇钰国：荆州分会。</p><p>镇祥琴：公安分会。</p><p>镇祝国：巫山分会。</p><p>镇祝军：宜都分会。</p><p>镇祥玉：宜昌分会。</p><p>镇祥军、镇志勇：武汉分会。</p><p>镇强：珠三角分会。</p><p>镇祝华：长三角分会兼任。</p></div>
+          <div><h3>顾问委员会</h3><p>镇起兰、镇起纯、镇祥森。</p><p>镇祥平、镇征越。</p></div>
+        </div>
+        <p class="sign">镇氏松滋茂八公理事会<br>二〇二六年六月</p>
+        <p class="muted">以上内容根据族亲提供资料整理，如有遗漏或需更正，请联系资料整理负责人。</p>
+      </div>
+    </section>
+    <section id="collect">
+      <div class="k">资料征集</div><h2>请把家族资料留下来</h2>
+      <div class="grid">
+        <article class="card"><h3>族谱家谱</h3><p>老谱照片、影印件、字辈排行。</p></article>
+        <article class="card"><h3>碑文祖坟</h3><p>祖坟位置、碑文照片、墓志信息。</p></article>
+        <article class="card"><h3>口述故事</h3><p>长辈回忆、迁徙经历、家风传统。</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><strong>镇氏家族志</strong><br><span>记录来处，联络当下，传承家风。</span></footer>
+</body>
+</html>
