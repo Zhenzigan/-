@@ -9,39 +9,102 @@
     *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
     header{position:sticky;top:0;background:#3b2d25;color:#fff;padding:14px 6vw;display:flex;justify-content:space-between;gap:20px;align-items:center;z-index:2}
     .brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:44px;height:44px;background:var(--red);border:2px solid #fff;font:700 28px KaiTi,serif}
-    nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}a{color:inherit;text-decoration:none}
-    .hero{padding:92px 6vw 96px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 80% 20%,rgba(181,133,53,.45),transparent 38%)}
-    .hero h1{margin:0 0 14px;font:700 clamp(48px,10vw,104px) KaiTi,serif}.hero p{max-width:760px;font-size:20px;color:#fff4e6}
+    nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}a{color:inherit;text-decoration:none}.textlink{color:var(--red);font-weight:700;border-bottom:1px solid rgba(166,66,47,.35)}
+    .hero{padding:88px 6vw 90px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 80% 20%,rgba(181,133,53,.45),transparent 38%)}
+    .hero h1{margin:0 0 14px;font:700 clamp(48px,10vw,104px) KaiTi,serif}.hero p{max-width:820px;font-size:20px;color:#fff4e6}
     .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:11px 20px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:700}.btn.primary{background:var(--red);border-color:var(--red)}
     section{padding:58px 6vw;border-bottom:1px solid var(--line)}.k{color:var(--gold);font-weight:700;font-size:13px}h2{font-size:34px;margin:6px 0 16px}h3{font-size:22px;margin:0 0 10px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px}
-    .card{background:#fffaf4;border:1px solid var(--line);padding:24px;box-shadow:0 8px 24px rgba(40,28,20,.07)}.notice{border-left:5px solid var(--red)}.notice.green{border-left-color:var(--green)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two{display:grid;grid-template-columns:.88fr 1.12fr;gap:32px;align-items:start}
+    .card,.paper{background:#fffaf4;border:1px solid var(--line);padding:24px;box-shadow:0 8px 24px rgba(40,28,20,.07)}.paper{max-width:1080px;background:#fffaf1;border-color:rgba(181,133,53,.35);padding:34px}
+    .notice{border-left:5px solid var(--red)}.notice.green{border-left-color:var(--green)}
     .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.meta div{background:#fff;border:1px solid var(--line);padding:20px}.meta span{display:block;color:var(--muted);font-size:13px}.meta strong{font-size:20px}
-    .paper{max-width:1050px;background:#fffaf1;border:1px solid rgba(181,133,53,.35);padding:34px;box-shadow:0 14px 38px rgba(40,28,20,.12)}
     .list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.list div{background:#fff;border:1px solid var(--line);padding:20px}.list p{margin:.3em 0;color:var(--muted)}
-    .sign{text-align:right;font-weight:700}.muted{color:var(--muted)}footer{padding:30px 6vw;background:#201815;color:#fff}
-    @media(max-width:850px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}}
+    .sign{text-align:right;font-weight:700}.muted{color:var(--muted)}.source li{margin:.35em 0}.small{font-size:14px}
+    .profile{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.profile img{width:100%;border:1px solid var(--line);background:#fff}
+    .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.photo-card{background:#fff;border:1px solid var(--line);padding:12px}.photo-card img{width:100%;display:block;margin-bottom:10px}.photo-card strong{display:block}.photo-card span{display:block;color:var(--muted);font-size:13px}
+    footer{padding:30px 6vw;background:#201815;color:#fff}
+    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
   </style>
 </head>
 <body>
   <header>
     <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家族志</strong><br><small>家族记忆与族亲联络平台</small></span></a>
-    <nav><a href="#notice">家族通知</a><a href="#jobs">就业信息</a><a href="#council">理事会</a><a href="#collect">资料征集</a></nav>
+    <nav><a href="#council">理事会</a><a href="#origin">镇姓源流</a><a href="#awards">族亲荣誉</a><a href="#profile">镇祝华</a><a href="#jobs">就业信息</a><a href="#collect">资料征集</a></nav>
   </header>
   <main id="top">
     <div class="hero">
       <div class="k">镇氏族人共同的家族档案</div>
       <h1>镇氏家族志</h1>
       <p>整理家族历史，保存族谱资料，发布族亲动态，传承家风家训，联络四方镇氏族亲。</p>
-      <div class="btns"><a class="btn primary" href="#jobs">查看招聘</a><a class="btn" href="#collect">提交资料</a></div>
+      <div class="btns"><a class="btn primary" href="#council">查看理事会</a><a class="btn" href="#origin">镇姓源流</a></div>
     </div>
-    <section id="notice" class="two">
-      <div><div class="k">家族通知</div><h2>近期事项</h2><p class="muted">这里发布家族聚会、祭祖、修谱、资料征集、就业信息等族内消息。</p></div>
-      <div class="grid" style="grid-template-columns:1fr">
-        <article class="card notice"><p class="muted">2026.06.19</p><h3>上海招聘实习生与应届生</h3><p>长三角分会现面向族内招聘多名实习生和应届生，工作方向为人工智能算力相关技术与销售。</p></article>
-        <article class="card notice green"><p class="muted">2026.06.19</p><h3>镇氏家族资料征集启动</h3><p>面向各地族亲征集族谱、碑文、祖籍线索、字辈排行、老照片和长辈口述故事。</p></article>
+
+    <section id="council">
+      <div class="paper">
+        <div class="k">家族公告</div><h2>关于调整镇氏茂八公理事会的通知</h2>
+        <p>各位理事、各位宗亲：</p>
+        <p>为确保镇氏家族各项工作的稳定、持续发展，现将调整后的理事会给予公示，望各位宗亲一如既往地关照和支持。</p>
+        <div class="list">
+          <div><h3>理事长及副理事长</h3><p>理事长：镇真炎，负责全面工作。</p><p>副理事长：镇祝华，负责三项活动。</p><p>副理事长：镇祥威，负责财务工作。</p><p>副理事长：镇高才，负责法律方面。</p><p>副理事长：镇北纬，负责资料收集，协助理事长。</p></div>
+          <div><h3>理事及分会会长</h3><p>镇松平：西斋分会。</p><p>镇祥鳌：花园洲分会。</p><p>镇高才兼镇祝清：新江口分会。</p><p>镇大军、镇钰国：荆州分会。</p><p>镇祥琴：公安分会。</p><p>镇祝国：巫山分会。</p><p>镇祝军：宜都分会。</p><p>镇祥玉：宜昌分会。</p><p>镇祥军、镇志勇：武汉分会。</p><p>镇强：珠三角分会。</p><p>镇祝华：长三角分会兼任。</p></div>
+          <div><h3>顾问委员会</h3><p>镇起兰、镇起纯、镇祥森。</p><p>镇祥平、镇征越。</p></div>
+        </div>
+        <p class="sign">镇氏松滋茂八公理事会<br>二〇二六年六月</p>
+        <p class="muted">以上内容根据族亲提供资料整理，如有遗漏或需更正，请联系资料整理负责人。</p>
       </div>
     </section>
+
+    <section id="origin" class="two">
+      <div>
+        <div class="k">家族历史</div><h2>镇姓源流与文献依据</h2>
+        <p class="muted">镇姓为较少见姓氏。结合族内资料与公开文献，可先以“湖北松滋、咸宁一带镇氏聚居”和“家谱记载元镇海后裔、明初迁松滋”为主要线索，后续再以族谱、碑文、地方志继续校订。</p>
+      </div>
+      <article class="card source">
+        <h3>文献线索</h3>
+        <ul>
+          <li>南朝宋何承天《姓苑》为早期姓氏文献，后世姓氏书转录“镇”为姓。</li>
+          <li>明凌迪知《万姓统谱》载：“镇，见《姓苑》，湖广松滋县有镇氏。”</li>
+          <li>《康熙字典》“镇”字条载“又姓”，并将镇姓与湖广松滋联系。</li>
+          <li>清《古今图书集成·氏族典》转录相关镇氏条目。</li>
+          <li>《松滋县志》《咸宁县志》《咸安区志》及近现代姓氏工具书，均可作为后续考证资料。</li>
+          <li>湖北松滋《镇氏家谱》、湖北咸宁《镇氏宗谱》是宗族第一手资料，应优先征集影印件与口述旁证。</li>
+        </ul>
+        <p class="small muted">参考阅读：<a class="textlink" href="https://zh.wikipedia.org/wiki/%E8%90%AC%E5%A7%93%E7%B5%B1%E8%AD%9C" target="_blank">《万姓统谱》简介</a>、<a class="textlink" href="https://baijiaxing.hao86.com/%E9%95%87/" target="_blank">镇姓资料页</a>。具体源流仍以本族谱牒、方志和碑文核验为准。</p>
+      </article>
+    </section>
+
+    <section id="awards">
+      <div class="k">族亲荣誉</div><h2>2025.08 嘉奖会</h2>
+      <p class="muted">热烈祝贺镇氏家族子女在 2025 年度高考中取得优秀成绩。家族理事会倡导崇学重教，鼓励后辈成长成才。以下内容根据公众号文章整理，公开页面不展示联系电话。</p>
+      <p><a class="textlink" href="https://mp.weixin.qq.com/s/CzM3e_IzaI3B2Orbgbb3dQ" target="_blank">查看公众号原文</a></p>
+      <div class="photo-grid">
+        <article class="photo-card"><img src="assets/award-zhengzhoucun.jpg" alt="镇钊村获奖照片"><strong>镇钊村</strong><span>上海对外经贸大学毕业，考入香港城市大学研究生。</span></article>
+        <article class="photo-card"><img src="assets/award-zhengyuxin.jpg" alt="镇宇昕录取照片"><strong>镇宇昕</strong><span>录取天津大学。</span></article>
+        <article class="photo-card"><img src="assets/award-zhengyiran.jpg" alt="镇怡然录取照片"><strong>镇怡然</strong><span>考入湖北大学。</span></article>
+        <article class="photo-card"><img src="assets/award-zhengjiasheng.jpg" alt="镇家盛录取照片"><strong>镇家盛</strong><span>录取华夏理工学院。</span></article>
+        <article class="photo-card"><img src="assets/award-zhenghao.jpg" alt="镇昊录取照片"><strong>镇昊</strong><span>录取兰州工业学院。</span></article>
+        <article class="photo-card"><img src="assets/award-wushuxuan.jpg" alt="吴书萱录取照片"><strong>吴书萱</strong><span>录取怀化学院。</span></article>
+        <article class="photo-card"><img src="assets/award-lizhangjing.jpg" alt="李张璟录取照片"><strong>李张璟</strong><span>录取广州应用科技学院。</span></article>
+      </div>
+    </section>
+
+    <section id="profile" class="two">
+      <div>
+        <div class="k">族亲人物</div><h2>镇祝华简历</h2>
+        <p class="muted">镇祝华，男，1955 年出生，祖籍湖北松滋西斋团山口村，现居上海浦东。现为镇氏茂八公后裔第二十四世，任镇氏家族松滋茂八公理事会副理事长，兼任长三角镇氏家族联谊会会长。</p>
+        <p><a class="textlink" href="https://mp.weixin.qq.com/s/6hxhmZSBJSW_i4b_UfgIEg" target="_blank">查看公众号原文</a></p>
+      </div>
+      <article class="card profile">
+        <img src="assets/zhen-zhuhua.jpg" alt="镇祝华照片">
+        <div>
+          <h3>工作与家族事务</h3>
+          <p>曾就读于华东理工大学、深造于上海复旦大学，长期从事人工智能与 IT 工作，具有企业管理、咨询、战略管理等经验。</p>
+          <p>近年来持续关心、支持镇氏家族事务，参与金榜题名、春节慰问高龄族人、家族资料整理等工作，推动长三角族亲联络与公益活动。</p>
+          <p class="small muted">人物资料根据族亲提供内容整理，如需补充履历细节，可继续提交文字资料。</p>
+        </div>
+      </article>
+    </section>
+
     <section id="jobs">
       <div class="k">就业信息</div><h2>上海招聘实习生和应届生</h2>
       <p class="muted">为了镇氏家族的繁荣昌盛，现面向族内青年发布上海就业机会。请各位家长、同学和族亲相互转告。</p>
@@ -57,24 +120,10 @@
           <p>工作内容主要围绕人工智能算力相关业务，包含技术支持与销售工作，销售方向以互联网、微信、电话等方式为主。</p>
           <p>欢迎懂 IT 技术、喜欢销售、愿意学习人工智能算力行业的族内青年报名。请有意向的家长和同学准备个人简历，私信联系。</p>
           <p>有今年毕业的大专、本科学生，或正在寻找就业机会的镇氏族亲，请与长三角分会会长 <strong>镇祝华</strong> 联系。</p>
-          <p><strong>机会难得，望各位族人相互转告。</strong></p>
         </article>
       </div>
     </section>
-    <section id="council">
-      <div class="paper">
-        <div class="k">家族公告</div><h2>关于调整镇氏茂八公理事会的通知</h2>
-        <p>各位理事、各位宗亲：</p>
-        <p>为确保镇氏家族各项工作的稳定、持续发展，现将调整后的理事会给予公示，望各位宗亲一如既往地关照和支持。</p>
-        <div class="list">
-          <div><h3>理事长及副理事长</h3><p>理事长：镇真炎，负责全面工作。</p><p>副理事长：镇祝华，负责三项活动。</p><p>副理事长：镇祥威，负责财务工作。</p><p>副理事长：镇高才，负责法律方面。</p><p>副理事长：镇北纬，负责资料收集，协助理事长。</p></div>
-          <div><h3>理事及分会会长</h3><p>镇松平：西斋分会。</p><p>镇祥鳌：花园洲分会。</p><p>镇高才兼镇祝清：新江口分会。</p><p>镇大军、镇钰国：荆州分会。</p><p>镇祥琴：公安分会。</p><p>镇祝国：巫山分会。</p><p>镇祝军：宜都分会。</p><p>镇祥玉：宜昌分会。</p><p>镇祥军、镇志勇：武汉分会。</p><p>镇强：珠三角分会。</p><p>镇祝华：长三角分会兼任。</p></div>
-          <div><h3>顾问委员会</h3><p>镇起兰、镇起纯、镇祥森。</p><p>镇祥平、镇征越。</p></div>
-        </div>
-        <p class="sign">镇氏松滋茂八公理事会<br>二〇二六年六月</p>
-        <p class="muted">以上内容根据族亲提供资料整理，如有遗漏或需更正，请联系资料整理负责人。</p>
-      </div>
-    </section>
+
     <section id="collect">
       <div class="k">资料征集</div><h2>请把家族资料留下来</h2>
       <div class="grid">
