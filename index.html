@@ -1,16 +1,16 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>镇氏家族志</title>
+  <title>镇氏家园</title>
   <style>
     :root{--ink:#25211d;--muted:#76685b;--paper:#fbf6ed;--line:#e0d2bf;--red:#a6422f;--green:#275f5d;--gold:#b58535}
     *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
     header{position:sticky;top:0;background:#3b2d25;color:#fff;padding:14px 6vw;display:flex;justify-content:space-between;gap:20px;align-items:center;z-index:2}
     .brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:44px;height:44px;background:var(--red);border:2px solid #fff;font:700 28px KaiTi,serif}
     nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}a{color:inherit;text-decoration:none}.textlink{color:var(--red);font-weight:700;border-bottom:1px solid rgba(166,66,47,.35)}
-    .hero{padding:88px 6vw 90px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 80% 20%,rgba(181,133,53,.45),transparent 38%)}
+    .hero{padding:88px 6vw 90px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 50% 30%,rgba(181,133,53,.55),transparent 28%)}
     .hero h1{margin:0 0 14px;font:700 clamp(48px,10vw,104px) KaiTi,serif}.hero p{max-width:820px;font-size:20px;color:#fff4e6}
     .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:11px 20px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:700}.btn.primary{background:var(--red);border-color:var(--red)}
     section{padding:58px 6vw;border-bottom:1px solid var(--line)}.k{color:var(--gold);font-weight:700;font-size:13px}h2{font-size:34px;margin:6px 0 16px}h3{font-size:22px;margin:0 0 10px}
@@ -20,24 +20,46 @@
     .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.meta div{background:#fff;border:1px solid var(--line);padding:20px}.meta span{display:block;color:var(--muted);font-size:13px}.meta strong{font-size:20px}
     .list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.list div{background:#fff;border:1px solid var(--line);padding:20px}.list p{margin:.3em 0;color:var(--muted)}
     .sign{text-align:right;font-weight:700}.muted{color:var(--muted)}.source li{margin:.35em 0}.small{font-size:14px}
+    .portal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}.portal a{display:block;background:#fffaf4;border:1px solid rgba(181,133,53,.45);padding:20px;color:var(--ink);box-shadow:0 8px 24px rgba(40,28,20,.07)}.portal strong{display:block;font-size:20px}.portal span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+    .tree{background:#fff;border:1px solid var(--line);padding:22px;overflow:auto}.tree ul{list-style:none;margin:0;padding-left:22px}.tree li{position:relative;margin:9px 0}.tree li:before{content:"";position:absolute;left:-14px;top:14px;width:10px;border-top:1px solid var(--line)}.tree .root{font-weight:700;color:var(--red)}
+    .directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory div{background:#fff;border:1px solid var(--line);padding:18px}.directory strong{display:block}.directory span{color:var(--muted);font-size:14px}
+    .message-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.message-box textarea,.message-box input{width:100%;padding:12px;border:1px solid var(--line);background:#fffaf8;font:inherit}.message-box textarea{min-height:120px}.fake-submit{display:inline-block;margin-top:12px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700}
     .profile{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.profile img{width:100%;border:1px solid var(--line);background:#fff}
     .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.photo-card{background:#fff;border:1px solid var(--line);padding:12px}.photo-card img{width:100%;display:block;margin-bottom:10px}.photo-card strong{display:block}.photo-card span{display:block;color:var(--muted);font-size:13px}
     footer{padding:30px 6vw;background:#201815;color:#fff}
-    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
+    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid,.portal,.directory,.message-box{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
   </style>
 </head>
 <body>
   <header>
-    <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家族志</strong><br><small>家族记忆与族亲联络平台</small></span></a>
-    <nav><a href="#council">理事会</a><a href="#origin">镇姓源流</a><a href="#awards">族亲荣誉</a><a href="#profile">镇祝华</a><a href="#jobs">就业信息</a><a href="#collect">资料征集</a></nav>
+    <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家园</strong><br><small>镇氏家族志与族亲联络平台</small></span></a>
+    <nav><a href="#home">首页</a><a href="#hall">祠堂文化</a><a href="#genealogy">族谱查询</a><a href="#preface">谱序公示</a><a href="#notables">名人栏目</a><a href="#directory">通讯录</a><a href="#messages">留言板</a></nav>
   </header>
   <main id="top">
     <div class="hero">
-      <div class="k">镇氏族人共同的家族档案</div>
-      <h1>镇氏家族志</h1>
-      <p>整理家族历史，保存族谱资料，发布族亲动态，传承家风家训，联络四方镇氏族亲。</p>
-      <div class="btns"><a class="btn primary" href="#council">查看理事会</a><a class="btn" href="#origin">镇姓源流</a></div>
+      <div class="k" id="home">镇氏族人共同的网上家园</div>
+      <h1>镇氏家园</h1>
+      <p>以“镇氏家族志”为资料核心，汇集祠堂文化、族谱公示、家族传承、族亲通讯、留言建议和当代动态，让族人浏览后能找到自己的来处与坐标。</p>
+      <div class="btns"><a class="btn primary" href="#genealogy">查看族谱</a><a class="btn" href="#messages">提出建议</a></div>
+      <div class="portal">
+        <a href="#hall"><strong>祠堂文化</strong><span>家风、祠堂、祭祖与宗亲活动。</span></a>
+        <a href="#genealogy"><strong>族谱查询</strong><span>支派、世系、字辈和传承树。</span></a>
+        <a href="#preface"><strong>谱序公示</strong><span>松滋、咸宁及合谱后序。</span></a>
+        <a href="#messages"><strong>留言修改</strong><span>族人意见集中收集，择优采纳。</span></a>
+      </div>
     </div>
+
+    <section id="hall" class="two">
+      <div>
+        <div class="k">祠堂文化</div><h2>慎终追远，民德归厚</h2>
+        <p class="muted">祠堂文化栏目用于展示镇氏家训、祭祖礼仪、祠堂图片、族内公益活动和各地分会动态。后续可放入祠堂照片、视频、族规族训、祭祖流程等资料。</p>
+      </div>
+      <article class="card">
+        <h3>建议栏目</h3>
+        <p>家族祠堂、祭祖活动、家训家规、先祖故事、族亲联谊、公益助学。</p>
+        <p class="small muted">当前页面先搭建栏目框架，图片和视频可继续由族人提供，后续统一整理上传。</p>
+      </article>
+    </section>
 
     <section id="council">
       <div class="paper">
@@ -71,6 +93,94 @@
         </ul>
         <p class="small muted">参考阅读：<a class="textlink" href="https://zh.wikipedia.org/wiki/%E8%90%AC%E5%A7%93%E7%B5%B1%E8%AD%9C" target="_blank">《万姓统谱》简介</a>、<a class="textlink" href="https://baijiaxing.hao86.com/%E9%95%87/" target="_blank">镇姓资料页</a>。具体源流仍以本族谱牒、方志和碑文核验为准。</p>
       </article>
+    </section>
+
+    <section id="genealogy">
+      <div class="k">族谱查询</div><h2>家族传承树状图</h2>
+      <p class="muted">族谱查询栏用于展示历代家族传承树、支派坐标、字辈排行和各地分支。现阶段先以公开框架展示，后续可把松滋、咸宁及各分会资料逐步录入，让族人按地区、房支、世代找到自己的位置。</p>
+      <div class="two">
+        <div class="tree">
+          <ul>
+            <li class="root">镇氏始祖与源流资料
+              <ul>
+                <li>松滋支系
+                  <ul>
+                    <li>西斋分会</li>
+                    <li>花园洲分会</li>
+                    <li>新江口分会</li>
+                    <li>荆州分会</li>
+                    <li>公安分会</li>
+                  </ul>
+                </li>
+                <li>咸宁支系
+                  <ul>
+                    <li>马桥、桂花等聚居资料</li>
+                    <li>咸宁历代宗谱资料</li>
+                  </ul>
+                </li>
+                <li>外迁分会
+                  <ul>
+                    <li>武汉分会、长三角分会、珠三角分会</li>
+                    <li>巫山、宜都、宜昌等分会</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <article class="card">
+          <h3>查询说明</h3>
+          <p>族人可先根据“地区、分会、房支、字辈、父祖姓名”五项信息定位。正式资料录入前，请各支派先提供电子表格或谱牒照片。</p>
+          <p>将来可连接公众网页网盘、腾讯文档或专门数据库，形成可搜索的族谱查询入口。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="preface">
+      <div class="k">谱序公示</div><h2>历代谱序与合谱后序</h2>
+      <div class="grid">
+        <article class="card"><h3>松滋历代谱序</h3><p>公示松滋镇氏旧谱序、续谱序、凡例、字派说明及修谱记录。</p></article>
+        <article class="card"><h3>咸宁历代谱序</h3><p>公示咸宁镇氏宗谱序文、迁徙说明、支派记载及地方志佐证。</p></article>
+        <article class="card"><h3>合谱后序</h3><p>整理合谱缘起、编修说明、资料来源、校勘原则和后续补正记录。</p></article>
+      </div>
+      <p class="small muted">谱序公示栏建议采用“原文影印 + 文字录入 + 族人校对意见”三种形式并列，便于核验。</p>
+    </section>
+
+    <section id="notables">
+      <div class="k">名人栏目</div><h2>历史名人与当代名人</h2>
+      <div class="grid">
+        <article class="card"><h3>历史名人</h3><p>收录正史、地方志、族谱和碑文中可考的镇氏人物，注明出处、年代、籍贯与事迹。</p></article>
+        <article class="card"><h3>当代名人</h3><p>收录在教育、科研、企业、公益、文化、军旅等方面有贡献的族亲人物。</p></article>
+        <article class="card"><h3>人物征集</h3><p>请提供人物姓名、出生年份、籍贯、主要经历、证书照片或公开报道链接，便于审核整理。</p></article>
+      </div>
+    </section>
+
+    <section id="directory">
+      <div class="k">通讯录</div><h2>分会联络通讯录</h2>
+      <p class="muted">通讯录面向族内联络使用，公开网页建议只展示分会名称和负责人，不直接公开私人电话。详细联系方式可放入族内网盘或由管理员私下提供。</p>
+      <div class="directory">
+        <div><strong>松滋总会</strong><span>理事会、资料整理、谱序校对。</span></div>
+        <div><strong>长三角分会</strong><span>上海、江苏、浙江、安徽族亲联络。</span></div>
+        <div><strong>武汉分会</strong><span>武汉及周边族亲联络。</span></div>
+        <div><strong>珠三角分会</strong><span>广东、深圳、广州等地族亲联络。</span></div>
+      </div>
+    </section>
+
+    <section id="messages">
+      <div class="k">留言板</div><h2>修改意见与资料补充</h2>
+      <div class="message-box">
+        <article class="card">
+          <h3>留言说明</h3>
+          <p>热心族人可围绕源流考证、谱序文字、世系树、人物资料、页面排版、错别字等提出意见。管理员汇总后择优采纳，并在公示栏说明修改依据。</p>
+          <p class="small muted">静态网页暂不能自动保存留言。正式使用时可接入腾讯文档、问卷星、邮箱或 GitHub Issues。</p>
+        </article>
+        <article class="card">
+          <h3>意见模板</h3>
+          <input placeholder="姓名 / 分会 / 联系方式">
+          <textarea placeholder="请填写修改意见、资料来源或需要补充的内容"></textarea>
+          <span class="fake-submit">提交入口待接入</span>
+        </article>
+      </div>
     </section>
 
     <section id="awards">
@@ -133,6 +243,6 @@
       </div>
     </section>
   </main>
-  <footer><strong>镇氏家族志</strong><br><span>记录来处，联络当下，传承家风。</span></footer>
+  <footer><strong>镇氏家园</strong><br><span>以镇氏家族志保存来处，以网上家园联络当下，凝聚宗亲，传承家风。</span></footer>
 </body>
 </html>
