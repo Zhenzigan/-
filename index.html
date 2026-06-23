@@ -24,6 +24,7 @@
     .tree{background:#fff;border:1px solid var(--line);padding:22px;overflow:auto}.tree ul{list-style:none;margin:0;padding-left:22px}.tree li{position:relative;margin:9px 0}.tree li:before{content:"";position:absolute;left:-14px;top:14px;width:10px;border-top:1px solid var(--line)}.tree .root{font-weight:700;color:var(--red)}
     .directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory div{background:#fff;border:1px solid var(--line);padding:18px}.directory strong{display:block}.directory span{color:var(--muted);font-size:14px}
     .message-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.message-box textarea,.message-box input{width:100%;padding:12px;border:1px solid var(--line);background:#fffaf8;font:inherit}.message-box textarea{min-height:120px}.fake-submit{display:inline-block;margin-top:12px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700}
+    .table-wrap{overflow:auto;margin-top:18px;border:1px solid var(--line);background:#fff}.paihang{width:100%;border-collapse:collapse;min-width:760px}.paihang th,.paihang td{border:1px solid var(--line);padding:10px 12px;text-align:center}.paihang th{background:#f3e5d1;color:#3b2d25}.paihang td:first-child{font-weight:700;color:var(--red)}
     .profile{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.profile img{width:100%;border:1px solid var(--line);background:#fff}
     .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.photo-card{background:#fff;border:1px solid var(--line);padding:12px}.photo-card img{width:100%;display:block;margin-bottom:10px}.photo-card strong{display:block}.photo-card span{display:block;color:var(--muted);font-size:13px}
     footer{padding:30px 6vw;background:#201815;color:#fff}
@@ -33,7 +34,7 @@
 <body>
   <header>
     <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家园</strong><br><small>镇氏家族志与族亲联络平台</small></span></a>
-    <nav><a href="#home">首页</a><a href="#hall">祠堂文化</a><a href="#genealogy">族谱查询</a><a href="#preface">谱序公示</a><a href="#notables">名人栏目</a><a href="#directory">通讯录</a><a href="#messages">留言板</a></nav>
+    <nav><a href="#home">首页</a><a href="#hall">祠堂文化</a><a href="#memorial">祭祖专栏</a><a href="#genealogy">族谱查询</a><a href="#preface">谱序公示</a><a href="#notables">名人栏目</a><a href="#directory">通讯录</a><a href="#messages">留言板</a></nav>
   </header>
   <main id="top">
     <div class="hero">
@@ -43,9 +44,9 @@
       <div class="btns"><a class="btn primary" href="#genealogy">查看族谱</a><a class="btn" href="#messages">提出建议</a></div>
       <div class="portal">
         <a href="#hall"><strong>祠堂文化</strong><span>家风、祠堂、祭祖与宗亲活动。</span></a>
+        <a href="#memorial"><strong>祭祖专栏</strong><span>网上立碑、追思祭文、祖坟资料。</span></a>
         <a href="#genealogy"><strong>族谱查询</strong><span>支派、世系、字辈和传承树。</span></a>
         <a href="#preface"><strong>谱序公示</strong><span>松滋、咸宁及合谱后序。</span></a>
-        <a href="#messages"><strong>留言修改</strong><span>族人意见集中收集，择优采纳。</span></a>
       </div>
     </div>
 
@@ -59,6 +60,28 @@
         <p>家族祠堂、祭祖活动、家训家规、先祖故事、族亲联谊、公益助学。</p>
         <p class="small muted">当前页面先搭建栏目框架，图片和视频可继续由族人提供，后续统一整理上传。</p>
       </article>
+    </section>
+
+    <section id="memorial">
+      <div class="k">祭祖专栏</div><h2>网上祭祖与祖先纪念</h2>
+      <p class="muted">祭祖专栏用于保存先祖牌位、祖坟碑文、墓志资料、祭文追思和清明祭扫记录。后续可为每位先祖建立独立纪念页，形成“网上立碑、族人献花、资料校对、后人追思”的家族纪念空间。</p>
+      <div class="grid">
+        <article class="card">
+          <h3>网上立碑</h3>
+          <p>可录入先祖姓名、字辈、世次、生卒年月、配偶、子女、墓址、碑文和照片。</p>
+          <p class="small muted">涉及墓址、家庭关系等信息时，建议先由本支族人确认后再公开。</p>
+        </article>
+        <article class="card">
+          <h3>祭文追思</h3>
+          <p>收录清明、冬至、周年祭、百年祭等祭文，以及后人怀念文章、碑联、家风故事。</p>
+          <p class="small muted">可先放文字版，后续再增加图片、音频或视频。</p>
+        </article>
+        <article class="card">
+          <h3>祖坟资料</h3>
+          <p>整理祖坟位置、碑文拓片、修缮记录、迁葬说明和祭扫联系人。</p>
+          <p class="small muted">公开页只展示经同意的内容，详细资料可放入族内网盘。</p>
+        </article>
+      </div>
     </section>
 
     <section id="council">
@@ -133,9 +156,26 @@
           <p>族人可先根据“地区、分会、房支、字辈、父祖姓名”五项信息定位。正式资料录入前，请各支派先提供电子表格或谱牒照片。</p>
           <p>将来可连接公众网页网盘、腾讯文档或专门数据库，形成可搜索的族谱查询入口。</p>
           <h3>派行资料</h3>
-          <p>族亲已提供《镇子派行列表》照片资料，内容涉及二世至六十八世等派行字辈。</p>
-          <p class="small muted">因目前资料为手机翻拍件，个别字迹、世次和表格边界仍需人工校对，暂不逐字录入网页。后续以清晰扫描件、谱牒原件或族人共同校对结果为准，再放入“谱序公示”和“族谱查询”栏目。</p>
+          <p>族亲已提供《镇子派行列表》照片资料，内容涉及二世至六十八世等派行字辈。以下先录入照片中相对清楚的部分，模糊字暂不填写。</p>
+          <p class="small muted">此表为手机翻拍件整理，个别字迹、世次和表格边界仍需人工校对；正式版本以清晰扫描件、谱牒原件或族人共同校对结果为准。</p>
         </article>
+      </div>
+      <div class="paper notice green">
+        <h3>镇子派行列表摘录</h3>
+        <p class="small muted">来源：族亲提供的《镇子派行列表》照片。只收录目前可以辨认的字辈，未辨清处不录入，后续待校对补全。</p>
+        <div class="table-wrap">
+          <table class="paihang">
+            <thead><tr><th>世次</th><th>二世</th><th>三世</th><th>四世</th><th>五世</th><th>六世</th><th>七世</th><th>八世</th><th>九世</th><th>十二世</th><th>十三世</th><th>十四世</th></tr></thead>
+            <tbody><tr><td>可辨字辈</td><td>茂</td><td>谷</td><td>然</td><td>登</td><td>文</td><td>思</td><td>华</td><td>佑</td><td>发</td><td>树</td><td>开</td></tr></tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="paihang">
+            <thead><tr><th>世次</th><th>十六世</th><th>十七世</th><th>十八世</th><th>十九世</th><th>二十世</th><th>二十一世</th><th>二十二世</th><th>二十三世</th><th>二十四世</th><th>二十五世</th></tr></thead>
+            <tbody><tr><td>可辨字辈</td><td>日</td><td>启</td><td>佑</td><td>承</td><td>祖</td><td>为</td><td>成</td><td>秀</td><td>学</td><td>万</td></tr></tbody>
+          </table>
+        </div>
+        <p class="small muted">照片中三十六世以后还有连续派行内容，但部分字迹较小、重影或倾斜，暂不录入，避免误传。</p>
       </div>
     </section>
 
@@ -191,25 +231,6 @@
         <div><strong>珠三角分会</strong><span>广东、深圳、广州等地族亲联络。</span></div>
         <div><strong>咸宁资料</strong><span>咸宁、马桥、桂花等地族亲资料待校对。</span></div>
         <div><strong>外迁资料</strong><span>江苏、上海、北京、广东、浙江、四川等地通讯线索待整理。</span></div>
-      </div>
-    </section>
-
-    <section id="messages">
-      <div class="k">留言板</div><h2>修改意见与资料补充</h2>
-      <div class="message-box">
-        <article class="card">
-          <h3>留言说明</h3>
-          <p>热心族人可围绕源流考证、谱序文字、世系树、人物资料、页面排版、错别字等提出意见。管理员汇总后择优采纳，并在公示栏说明修改依据。</p>
-          <p>推荐使用腾讯文档或腾讯问卷收集留言。表单可设置姓名、所属分会、联系电话、留言内容、资料上传等项目，族人提交后，管理员可在腾讯文档后台统一查看、筛选和整理。</p>
-          <p class="small muted">静态网页本身不能自动保存留言。等腾讯问卷创建好后，把链接接到右侧按钮即可正式收集。</p>
-        </article>
-        <article class="card">
-          <h3>腾讯问卷入口</h3>
-          <input placeholder="姓名 / 分会 / 联系方式">
-          <textarea placeholder="请填写修改意见、资料来源或需要补充的内容"></textarea>
-          <a class="fake-submit" href="https://wj.qq.com/s2/27101407/ae1e/" target="_blank" rel="noopener">提交修改意见</a>
-          <p class="small muted">族人提交后，你可登录腾讯问卷后台查看、筛选和导出留言资料。</p>
-        </article>
       </div>
     </section>
 
@@ -270,6 +291,25 @@
         <article class="card"><h3>族谱家谱</h3><p>老谱照片、影印件、字辈排行。</p></article>
         <article class="card"><h3>碑文祖坟</h3><p>祖坟位置、碑文照片、墓志信息。</p></article>
         <article class="card"><h3>口述故事</h3><p>长辈回忆、迁徙经历、家风传统。</p></article>
+      </div>
+    </section>
+
+    <section id="messages">
+      <div class="k">留言板</div><h2>修改意见与资料补充</h2>
+      <div class="message-box">
+        <article class="card">
+          <h3>留言说明</h3>
+          <p>热心族人可围绕源流考证、谱序文字、世系树、人物资料、祭祖资料、页面排版、错别字等提出意见。管理员汇总后择优采纳，并在公示栏说明修改依据。</p>
+          <p>推荐使用腾讯文档或腾讯问卷收集留言。表单可设置姓名、所属分会、联系电话、留言内容、资料上传等项目，族人提交后，管理员可在腾讯文档后台统一查看、筛选和整理。</p>
+          <p class="small muted">静态网页本身不能自动保存留言。请点击右侧腾讯问卷入口提交资料和修改建议。</p>
+        </article>
+        <article class="card">
+          <h3>腾讯问卷入口</h3>
+          <input placeholder="姓名 / 分会 / 联系方式">
+          <textarea placeholder="请填写修改意见、资料来源或需要补充的内容"></textarea>
+          <a class="fake-submit" href="https://wj.qq.com/s2/27101407/ae1e/" target="_blank" rel="noopener">提交修改意见</a>
+          <p class="small muted">族人提交后，你可登录腾讯问卷后台查看、筛选和导出留言资料。</p>
+        </article>
       </div>
     </section>
   </main>
