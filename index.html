@@ -25,10 +25,11 @@
     .directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory div{background:#fff;border:1px solid var(--line);padding:18px}.directory strong{display:block}.directory span{color:var(--muted);font-size:14px}
     .message-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.message-box textarea,.message-box input{width:100%;padding:12px;border:1px solid var(--line);background:#fffaf8;font:inherit}.message-box textarea{min-height:120px}.fake-submit{display:inline-block;margin-top:12px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700}
     .table-wrap{overflow:auto;margin-top:18px;border:1px solid var(--line);background:#fff}.paihang{width:100%;border-collapse:collapse;min-width:760px}.paihang th,.paihang td{border:1px solid var(--line);padding:10px 12px;text-align:center}.paihang th{background:#f3e5d1;color:#3b2d25}.paihang td:first-child{font-weight:700;color:var(--red)}
+    .memorial-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.memorial-actions div{background:#fff;border:1px solid var(--line);padding:18px}.memorial-actions strong{display:block;font-size:18px}.memorial-actions span{display:block;color:var(--muted);font-size:14px;margin-top:6px}.ledger{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.ledger div{background:#fff;border:1px solid var(--line);padding:18px}.ledger b{color:var(--red)}
     .profile{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.profile img{width:100%;border:1px solid var(--line);background:#fff}
     .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.photo-card{background:#fff;border:1px solid var(--line);padding:12px}.photo-card img{width:100%;display:block;margin-bottom:10px}.photo-card strong{display:block}.photo-card span{display:block;color:var(--muted);font-size:13px}
     footer{padding:30px 6vw;background:#201815;color:#fff}
-    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid,.portal,.directory,.message-box{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
+    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid,.portal,.directory,.message-box,.memorial-actions,.ledger{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
   </style>
 </head>
 <body>
@@ -44,7 +45,7 @@
       <div class="btns"><a class="btn primary" href="#genealogy">查看族谱</a><a class="btn" href="#messages">提出建议</a></div>
       <div class="portal">
         <a href="#hall"><strong>祠堂文化</strong><span>家风、祠堂、祭祖与宗亲活动。</span></a>
-        <a href="#memorial"><strong>祭祖专栏</strong><span>网上立碑、追思祭文、祖坟资料。</span></a>
+        <a href="#memorial"><strong>祭祖专栏</strong><span>网上立碑、献花上香、功德簿。</span></a>
         <a href="#genealogy"><strong>族谱查询</strong><span>支派、世系、字辈和传承树。</span></a>
         <a href="#preface"><strong>谱序公示</strong><span>松滋、咸宁及合谱后序。</span></a>
       </div>
@@ -64,7 +65,7 @@
 
     <section id="memorial">
       <div class="k">祭祖专栏</div><h2>网上祭祖与祖先纪念</h2>
-      <p class="muted">祭祖专栏用于保存先祖牌位、祖坟碑文、墓志资料、祭文追思和清明祭扫记录。后续可为每位先祖建立独立纪念页，形成“网上立碑、族人献花、资料校对、后人追思”的家族纪念空间。</p>
+      <p class="muted">祭祖专栏用于保存先祖牌位、祖坟碑文、墓志资料、祭文追思和清明祭扫记录。后续可为每位先祖建立独立纪念页，形成“网上立碑、族人献花、上香追思、资料校对、后人纪念”的家族墓园空间。</p>
       <div class="grid">
         <article class="card">
           <h3>网上立碑</h3>
@@ -81,6 +82,22 @@
           <p>整理祖坟位置、碑文拓片、修缮记录、迁葬说明和祭扫联系人。</p>
           <p class="small muted">公开页只展示经同意的内容，详细资料可放入族内网盘。</p>
         </article>
+      </div>
+      <div class="memorial-actions">
+        <div><strong>献花</strong><span>族人可在先祖纪念页点击“献花”，表达追思敬意。后续可统计献花人姓名、时间和留言。</span></div>
+        <div><strong>上香</strong><span>可设置“上香祭拜”按钮，用于清明、冬至、周年祭等线上祭祀场景。</span></div>
+        <div><strong>追思留言</strong><span>每位先祖纪念页可收集后人留言、祭文、碑联和家风故事，审核后公开。</span></div>
+        <div><strong>资料校对</strong><span>族人可提交生卒年月、墓址、碑文照片等补充资料，由管理员复核后更新。</span></div>
+      </div>
+      <div class="paper notice green">
+        <h3>功德簿与功德箱</h3>
+        <p>功德簿用于记录族亲为修谱、祭祖、祖坟修缮、公益助学、祠堂文化建设等事项的捐款、捐物和出力情况。建议记录捐赠人、所属分会、用途、金额或物资、日期、经手人和公示状态。</p>
+        <div class="ledger">
+          <div><b>功德簿</b><span>公开展示经确认可公示的捐赠记录，便于族人监督和铭记善举。</span></div>
+          <div><b>功德箱</b><span>预留收款入口，将来可连接微信收款、银行账户或腾讯文档登记表。</span></div>
+          <div><b>财务公示</b><span>建议按季度或项目公示收入、支出、余额和票据说明，保证公开透明。</span></div>
+        </div>
+        <p class="small muted">当前功德箱仅作为备用功能展示，暂未连接任何真实收款账户。正式启用前，应先明确收款账户、管理员、财务审核和公示规则。</p>
       </div>
     </section>
 
