@@ -23,19 +23,21 @@
     .portal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}.portal a{display:block;background:#fffaf4;border:1px solid rgba(181,133,53,.45);padding:20px;color:var(--ink);box-shadow:0 8px 24px rgba(40,28,20,.07)}.portal strong{display:block;font-size:20px}.portal span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
     .tree{background:#fff;border:1px solid var(--line);padding:22px;overflow:auto}.tree ul{list-style:none;margin:0;padding-left:22px}.tree li{position:relative;margin:9px 0}.tree li:before{content:"";position:absolute;left:-14px;top:14px;width:10px;border-top:1px solid var(--line)}.tree .root{font-weight:700;color:var(--red)}
     .directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory div{background:#fff;border:1px solid var(--line);padding:18px}.directory strong{display:block}.directory span{color:var(--muted);font-size:14px}
+    .archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.archive-grid div{background:#fff;border:1px solid var(--line);padding:18px}.archive-grid strong{display:block;font-size:18px}.archive-grid span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+    .quote{border-left:5px solid var(--gold);padding-left:18px;color:#4d3a2b;background:#fff;padding-top:10px;padding-bottom:10px}
     .message-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.message-box textarea,.message-box input{width:100%;padding:12px;border:1px solid var(--line);background:#fffaf8;font:inherit}.message-box textarea{min-height:120px}.fake-submit{display:inline-block;margin-top:12px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700}
     .table-wrap{overflow:auto;margin-top:18px;border:1px solid var(--line);background:#fff}.paihang{width:100%;border-collapse:collapse;min-width:760px}.paihang th,.paihang td{border:1px solid var(--line);padding:10px 12px;text-align:center}.paihang th{background:#f3e5d1;color:#3b2d25}.paihang td:first-child{font-weight:700;color:var(--red)}
     .memorial-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.memorial-actions div{background:#fff;border:1px solid var(--line);padding:18px}.memorial-actions strong{display:block;font-size:18px}.memorial-actions span{display:block;color:var(--muted);font-size:14px;margin-top:6px}.ledger{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.ledger div{background:#fff;border:1px solid var(--line);padding:18px}.ledger b{color:var(--red)}
     .profile{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.profile img{width:100%;border:1px solid var(--line);background:#fff}
     .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.photo-card{background:#fff;border:1px solid var(--line);padding:12px}.photo-card img{width:100%;display:block;margin-bottom:10px}.photo-card strong{display:block}.photo-card span{display:block;color:var(--muted);font-size:13px}
     footer{padding:30px 6vw;background:#201815;color:#fff}
-    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid,.portal,.directory,.message-box,.memorial-actions,.ledger{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
+    @media(max-width:900px){header{align-items:flex-start;flex-direction:column}.grid,.two,.list,.profile,.photo-grid,.portal,.directory,.message-box,.memorial-actions,.ledger,.archive-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.hero{padding-top:70px}.profile img{max-width:320px}}
   </style>
 </head>
 <body>
   <header>
     <a class="brand" href="#top"><span class="mark">镇</span><span><strong>镇氏家园</strong><br><small>镇氏家族志与族亲联络平台</small></span></a>
-    <nav><a href="#home">首页</a><a href="#hall">祠堂文化</a><a href="#memorial">祭祖专栏</a><a href="#genealogy">族谱查询</a><a href="#preface">谱序公示</a><a href="#notables">名人栏目</a><a href="#directory">通讯录</a><a href="#messages">留言板</a></nav>
+    <nav><a href="#home">首页</a><a href="#hall">祠堂文化</a><a href="#memorial">祭祖专栏</a><a href="#genealogy">族谱查询</a><a href="#preface">谱序公示</a><a href="#archive">资料馆</a><a href="#notables">名人栏目</a><a href="#directory">通讯录</a><a href="#messages">留言板</a></nav>
   </header>
   <main id="top">
     <div class="hero">
@@ -48,6 +50,7 @@
         <a href="#memorial"><strong>祭祖专栏</strong><span>网上立碑、献花上香、功德簿。</span></a>
         <a href="#genealogy"><strong>族谱查询</strong><span>支派、世系、字辈和传承树。</span></a>
         <a href="#preface"><strong>谱序公示</strong><span>松滋、咸宁及合谱后序。</span></a>
+        <a href="#archive"><strong>资料馆</strong><span>宗谱文件、照片、视频和修谱资料。</span></a>
       </div>
     </div>
 
@@ -173,26 +176,41 @@
           <p>族人可先根据“地区、分会、房支、字辈、父祖姓名”五项信息定位。正式资料录入前，请各支派先提供电子表格或谱牒照片。</p>
           <p>将来可连接公众网页网盘、腾讯文档或专门数据库，形成可搜索的族谱查询入口。</p>
           <h3>派行资料</h3>
-          <p>族亲已提供《镇子派行列表》照片资料，内容涉及二世至六十八世等派行字辈。以下先录入照片中相对清楚的部分，模糊字暂不填写。</p>
-          <p class="small muted">此表为手机翻拍件整理，个别字迹、世次和表格边界仍需人工校对；正式版本以清晰扫描件、谱牒原件或族人共同校对结果为准。</p>
+          <p>族亲已提供《镇氏通讯录完整版》中的《辈分派行列表》文字资料，现先按可确认内容录入。松滋、咸宁从三十世起统一使用派行，外各省市可按本表世袭校对。</p>
+          <p class="small muted">此表来源于本地宗谱资料文件，仍建议族人继续用清晰谱牒原件共同校对。</p>
         </article>
       </div>
       <div class="paper notice green">
-        <h3>镇子派行列表摘录</h3>
-        <p class="small muted">来源：族亲提供的《镇子派行列表》照片。只收录目前可以辨认的字辈，未辨清处不录入，后续待校对补全。</p>
+        <h3>镇子派行列表</h3>
+        <p class="small muted">来源：D:/BaiduNetdiskDownload/镇氏家族/镇氏通讯录完整版/3.docx。以下按文件中可确认文字整理。</p>
         <div class="table-wrap">
           <table class="paihang">
-            <thead><tr><th>世次</th><th>二世</th><th>三世</th><th>四世</th><th>五世</th><th>六世</th><th>七世</th><th>八世</th><th>九世</th><th>十二世</th><th>十三世</th><th>十四世</th></tr></thead>
-            <tbody><tr><td>可辨字辈</td><td>茂</td><td>谷</td><td>然</td><td>登</td><td>文</td><td>思</td><td>华</td><td>佑</td><td>发</td><td>树</td><td>开</td></tr></tbody>
+            <thead><tr><th>湖北始祖</th><th>二世</th><th>三世</th><th>四世</th><th>五世</th><th>六世</th><th>七世</th><th>八世</th><th>九世</th></tr></thead>
+            <tbody><tr><td>辛九公</td><td>茂</td><td>谷</td><td>思</td><td>堂</td><td>友</td><td>国</td><td>兴</td><td>汝</td></tr></tbody>
           </table>
         </div>
         <div class="table-wrap">
           <table class="paihang">
-            <thead><tr><th>世次</th><th>十六世</th><th>十七世</th><th>十八世</th><th>十九世</th><th>二十世</th><th>二十一世</th><th>二十二世</th><th>二十三世</th><th>二十四世</th><th>二十五世</th></tr></thead>
-            <tbody><tr><td>可辨字辈</td><td>日</td><td>启</td><td>佑</td><td>承</td><td>祖</td><td>为</td><td>成</td><td>秀</td><td>学</td><td>万</td></tr></tbody>
+            <thead><tr><th>支系</th><th>十世</th><th>十一世</th><th>十二世</th><th>十三世</th><th>十四世</th><th>十五世</th><th>十六世</th><th>十七世</th><th>十八世</th><th>十九世</th><th>二十世</th><th>二十一世</th><th>二十二世</th><th>二十三世</th><th>二十四世</th><th>二十五世</th><th>二十六世</th><th>二十七世</th><th>二十八世</th><th>二十九世</th></tr></thead>
+            <tbody>
+              <tr><td>松滋</td><td>安</td><td>国</td><td>朝</td><td>时</td><td>开</td><td>盛</td><td>美</td><td>定</td><td>乾</td><td>元</td><td>运</td><td>起</td><td>真</td><td>祥</td><td>祝</td><td>英</td><td>嗣</td><td>灵</td><td>秀</td><td>忠</td></tr>
+              <tr><td>咸宁</td><td>南</td><td>一</td><td>于</td><td>镇</td><td>朝</td><td>其</td><td>日</td><td>治</td><td>运</td><td>乃</td><td>天</td><td>常</td><td>万</td><td>方</td><td>咸</td><td>景</td><td>百</td><td>世</td><td>永</td><td>昌</td></tr>
+            </tbody>
           </table>
         </div>
-        <p class="small muted">照片中三十六世以后还有连续派行内容，但部分字迹较小、重影或倾斜，暂不录入，避免误传。</p>
+        <div class="table-wrap">
+          <table class="paihang">
+            <thead><tr><th>统一派行</th><th>三十世</th><th>三十一世</th><th>三十二世</th><th>三十三世</th><th>三十四世</th><th>三十五世</th><th>三十六世</th><th>三十七世</th><th>三十八世</th><th>三十九世</th><th>四十世</th><th>四十一世</th><th>四十二世</th></tr></thead>
+            <tbody><tr><td>咸松统一</td><td>承</td><td>先</td><td>继</td><td>厚</td><td>耀</td><td>祖</td><td>荣</td><td>光</td><td>文</td><td>能</td><td>守</td><td>典</td><td>武</td></tr></tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="paihang">
+            <thead><tr><th>统一派行</th><th>四十三世</th><th>四十四世</th><th>四十五世</th><th>四十六世</th><th>四十七世</th><th>四十八世</th><th>四十九世</th><th>五十世</th><th>五十一世</th><th>五十二世</th><th>五十三世</th><th>五十四世</th><th>五十五世</th><th>五十六世</th><th>五十七世</th><th>五十八世</th><th>五十九世</th><th>六十世</th><th>六十一世</th></tr></thead>
+            <tbody><tr><td>咸松统一</td><td>可</td><td>卫</td><td>邦</td><td>智</td><td>仁</td><td>和</td><td>勇</td><td>兰</td><td>桂</td><td>生</td><td>香</td><td>功</td><td>德</td><td>泽</td><td>远</td><td>福</td><td>禄</td><td>攸</td><td>长</td></tr></tbody>
+          </table>
+        </div>
+        <p class="small muted">注：松滋、咸宁从三十世统一使用派行；外各省市根据本次确定的辈分派行按本表世袭即可。</p>
       </div>
     </section>
 
@@ -204,6 +222,43 @@
         <article class="card"><h3>合谱后序</h3><p>整理合谱缘起、编修说明、资料来源、校勘原则和后续补正记录。</p></article>
       </div>
       <p class="small muted">谱序公示栏建议采用“原文影印 + 文字录入 + 族人校对意见”三种形式并列，便于核验。</p>
+    </section>
+
+    <section id="archive">
+      <div class="k">资料馆</div><h2>宗谱资料档案馆</h2>
+      <p class="muted">根据本地文件夹 D:/BaiduNetdiskDownload/镇氏家族/ 整理，先把资料范围、核心文献、修谱寄语和可公开摘要放入网页。大型图片、视频、CDR、PSD、Excel 文件建议后续统一放入公众网页网盘，再在这里挂链接。</p>
+      <div class="archive-grid">
+        <div><strong>增修谱共4卷</strong><span>81 个文件，含 61 份 Excel 世系表、4 份 Word 文档、16 份 PSD 设计稿，约 38.49MB。</span></div>
+        <div><strong>宗谱六卷成品</strong><span>286 张 JPG 成品页，约 48.68MB，可作为后续电子谱浏览素材。</span></div>
+        <div><strong>宗谱六卷原版</strong><span>29 份 CDR 原版文件，约 130.96MB，适合印刷和重排留档。</span></div>
+        <div><strong>原松滋第一卷</strong><span>70 张 JPG，约 14.68MB，可放入“松滋历代谱序与世系”资料组。</span></div>
+        <div><strong>宗谱格式字形</strong><span>含 10 份 TTF、1 份 TTC 和 1 份 CDR，用于保持宗谱排版字形一致。</span></div>
+        <div><strong>视频资料</strong><span>颁谱大会盛况.mpg 约 214MB；第5次定稿.wmv 约 610MB，后续建议上传网盘。</span></div>
+        <div><strong>公开信与讲话</strong><span>包含给镇氏族人的公开信、发行讲话、甲午年修谱序等文字资料。</span></div>
+        <div><strong>通讯录完整版</strong><span>含通讯录简编序、辈分派行列表、族人联络资料与事业资料。</span></div>
+      </div>
+      <div class="grid" style="margin-top:22px">
+        <article class="card">
+          <h3>镇氏族人公开信摘要</h3>
+          <p>公开信提出：国有国史、地方有县志，家族也应有族谱。镇氏族人应共同寻找根源、核清族别、整理世系，在全国范围内搜集资料，做到真实准确，并通过功德簿记载族人贡献。</p>
+          <p class="small muted">原文较长，后续可在谱序公示栏放入全文校对版。</p>
+        </article>
+        <article class="card">
+          <h3>通讯录简编序摘要</h3>
+          <p>通讯录简编序说明，整理族人通讯资料是为了方便寻根问祖、联络宗亲、互通信息。资料中提到镇氏宗谱已形成三十四卷、五十七册的整理成果，并赠予相关档案馆保存。</p>
+          <p class="small muted">个人电话和住址较多，建议作为网盘文档或管理员后台资料保存。</p>
+        </article>
+        <article class="card">
+          <h3>镇氏文化与事业资料</h3>
+          <p>资料中收录咸宁麻塘风湿病医院简介，提到镇海馀先生创办医院及“镇氏风湿病马钱子疗法”相关传承，可作为当代镇氏事业与非遗资料继续整理。</p>
+          <p class="small muted">后续可放入“当代名人”“家族事业”“非遗传承”栏目。</p>
+        </article>
+      </div>
+      <div class="paper notice green" style="margin-top:22px">
+        <h3>征越寄语</h3>
+        <p class="quote">为了镇氏家族的兴旺发达，后继英才辈出，镇征越寄语后人：继续论证血脉来源，正本清源族别问题，理顺各地镇氏族人关系，统一使用派行，延续宗谱修增，团结族人，为国家、民族和镇氏家族各尽其力，光宗耀祖。</p>
+        <p class="small muted">来源：1.寄语/征越寄语.txt。原文署“镇氏二十二世裔孙征越寄语，二〇一二壬辰年八月十二日”。</p>
+      </div>
     </section>
 
     <section id="notables">
