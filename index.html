@@ -23,7 +23,7 @@
     .portal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}.portal a{display:block;background:#fffaf4;border:1px solid rgba(181,133,53,.45);padding:20px;color:var(--ink);box-shadow:0 8px 24px rgba(40,28,20,.07)}.portal strong{display:block;font-size:20px}.portal span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
     .tree{background:#fff;border:1px solid var(--line);padding:22px;overflow:auto}.tree ul{list-style:none;margin:0;padding-left:22px}.tree li{position:relative;margin:9px 0}.tree li:before{content:"";position:absolute;left:-14px;top:14px;width:10px;border-top:1px solid var(--line)}.tree .root{font-weight:700;color:var(--red)}
     .directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory div{background:#fff;border:1px solid var(--line);padding:18px}.directory strong{display:block}.directory span{color:var(--muted);font-size:14px}
-    .archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.archive-grid div{background:#fff;border:1px solid var(--line);padding:18px}.archive-grid strong{display:block;font-size:18px}.archive-grid span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+    .archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.archive-grid div{background:#fff;border:1px solid var(--line);padding:18px}.archive-grid strong{display:block;font-size:18px}.archive-grid span{display:block;color:var(--muted);font-size:14px;margin-top:6px}.archive-panel{margin-top:16px;border:1px solid var(--line);background:#fff}.archive-panel summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:800;color:var(--red);display:flex;justify-content:space-between;gap:16px}.archive-panel summary::-webkit-details-marker{display:none}.archive-panel summary span{font-weight:500;color:var(--muted);font-size:14px}.archive-body{border-top:1px solid var(--line);padding:20px}.archive-body h4{margin:18px 0 8px}.archive-body ul{margin-top:8px}.archive-body li{margin:6px 0}.archive-text{white-space:pre-wrap;background:#fbfaf6;border-left:4px solid var(--gold);padding:16px;line-height:1.9;max-height:420px;overflow:auto}.folder-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.folder-list div{border:1px solid var(--line);padding:12px;background:#fbfaf6}
     .quote{border-left:5px solid var(--gold);padding-left:18px;color:#4d3a2b;background:#fff;padding-top:10px;padding-bottom:10px}
     .message-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.message-box textarea,.message-box input{width:100%;padding:12px;border:1px solid var(--line);background:#fffaf8;font:inherit}.message-box textarea{min-height:120px}.fake-submit{display:inline-block;margin-top:12px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700}
     .table-wrap{overflow:auto;margin-top:18px;border:1px solid var(--line);background:#fff}.paihang{width:100%;border-collapse:collapse;min-width:760px}.paihang th,.paihang td{border:1px solid var(--line);padding:10px 12px;text-align:center}.paihang th{background:#f3e5d1;color:#3b2d25}.paihang td:first-child{font-weight:700;color:var(--red)}
@@ -226,17 +226,121 @@
 
     <section id="archive">
       <div class="k">资料馆</div><h2>宗谱资料档案馆</h2>
-      <p class="muted">根据本地文件夹 D:/BaiduNetdiskDownload/镇氏家族/ 整理，先把资料范围、核心文献、修谱寄语和可公开摘要放入网页。大型图片、视频、CDR、PSD、Excel 文件建议后续统一放入公众网页网盘，再在这里挂链接。</p>
+      <p class="muted">根据本地文件夹 D:/BaiduNetdiskDownload/镇氏家族/ 整理。下面 8 个板块可以点击展开查看，先收录可确认的资料说明、卷目、正文摘要和后续网盘位置；大体积 JPG、CDR、PSD、视频文件保留档案说明，后续可统一上传公众网盘后挂链接。</p>
       <div class="archive-grid">
-        <div><strong>增修谱共4卷</strong><span>81 个文件，含 61 份 Excel 世系表、4 份 Word 文档、16 份 PSD 设计稿，约 38.49MB。</span></div>
-        <div><strong>宗谱六卷成品</strong><span>286 张 JPG 成品页，约 48.68MB，可作为后续电子谱浏览素材。</span></div>
-        <div><strong>宗谱六卷原版</strong><span>29 份 CDR 原版文件，约 130.96MB，适合印刷和重排留档。</span></div>
-        <div><strong>原松滋第一卷</strong><span>70 张 JPG，约 14.68MB，可放入“松滋历代谱序与世系”资料组。</span></div>
-        <div><strong>宗谱格式字形</strong><span>含 10 份 TTF、1 份 TTC 和 1 份 CDR，用于保持宗谱排版字形一致。</span></div>
-        <div><strong>视频资料</strong><span>颁谱大会盛况.mpg 约 214MB；第5次定稿.wmv 约 610MB，后续建议上传网盘。</span></div>
-        <div><strong>公开信与讲话</strong><span>包含给镇氏族人的公开信、发行讲话、甲午年修谱序等文字资料。</span></div>
-        <div><strong>通讯录完整版</strong><span>含通讯录简编序、辈分派行列表、族人联络资料与事业资料。</span></div>
+        <div><strong>增修谱共4卷</strong><span>点击下方详情查看卷三十一至卷三十四资料范围。</span></div>
+        <div><strong>宗谱六卷成品</strong><span>点击下方详情查看六卷 JPG 页数与浏览说明。</span></div>
+        <div><strong>宗谱六卷原版</strong><span>点击下方详情查看 CDR 原版卷目。</span></div>
+        <div><strong>原松滋第一卷</strong><span>点击下方详情查看松滋第一卷影印说明。</span></div>
+        <div><strong>宗谱格式字形</strong><span>点击下方详情查看排版字体和格式资料。</span></div>
+        <div><strong>视频资料</strong><span>点击下方详情查看颁谱大会与定稿视频说明。</span></div>
+        <div><strong>公开信与讲话</strong><span>点击下方详情查看公开信、讲话、谱序摘要。</span></div>
+        <div><strong>通讯录完整版</strong><span>点击下方详情查看通讯录、派行、联络资料原则。</span></div>
       </div>
+      <details class="archive-panel" open>
+        <summary>增修谱共4卷 <span>81 个文件，约 38.49MB</span></summary>
+        <div class="archive-body">
+          <p>该组资料主要用于补充增修宗谱，含 Excel 世系表、Word 序言/续编说明、PSD 封面与版式稿、功德簿等。按文件夹可确认分为四卷：</p>
+          <div class="folder-list">
+            <div><strong>卷三十一 全卷之七 松滋部分</strong><br>含增修谱序、目录、派行、松滋/枝江/宜都/公安/江陵/陕西等支系表及功德簿。</div>
+            <div><strong>卷三十二 江苏宝应</strong><br>含封面、家乐、铭鼎堂、家训、目录、甲午年修编谱序、派行、吊线表、功德簿。</div>
+            <div><strong>卷三十三 江苏常州</strong><br>含序言、派行、镇相、佰生/兆生、金林/金山等世系表及功德簿。</div>
+            <div><strong>卷三十四 江苏南通</strong><br>含江苏南通修编续、派行、镇慈勖、镇勇全、镇进富、镇进学、镇海山、镇庆荣等世系表及花名册。</div>
+          </div>
+          <p class="small muted">处理原则：Excel 世系表涉及族人详细信息，公开页先展示卷目和资料范围；完整表格建议放入族内网盘或管理员资料库。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>宗谱六卷成品 <span>286 张 JPG，可作为电子谱浏览素材</span></summary>
+        <div class="archive-body">
+          <p>该组为宗谱六卷 JPG 成品页，适合后续做成“电子宗谱相册”。目前已确认页数如下：</p>
+          <ul>
+            <li>第一卷：70 页</li>
+            <li>第二卷：46 页</li>
+            <li>第三卷：41 页</li>
+            <li>第四卷：48 页</li>
+            <li>第五卷：40 页</li>
+            <li>第六卷：41 页</li>
+          </ul>
+          <p>网页后续可升级为“按卷选择 - 上一页/下一页 - 放大查看”的相册模式。由于图片总量较大，建议先上传到公开网盘或 GitHub 资料目录，再把每卷相册链接接入本板块。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>宗谱六卷原版 <span>29 份 CDR 原版，约 130.96MB</span></summary>
+        <div class="archive-body">
+          <p>该组是宗谱印刷和重排用的 CorelDRAW 原版文件，适合长期归档，不建议直接放公众号。</p>
+          <ul>
+            <li>第一卷：功德簿、族谱文件、族谱首卷、派行总吊线。</li>
+            <li>第二卷：第二卷 1、第二卷 2、第二卷 5 完、第二卷 6 及备份。</li>
+            <li>第三卷：三卷一、三卷二、三卷三、三卷五、三卷六七八、三卷目录等。</li>
+            <li>第四卷、第五卷：各 1 份 CDR 原版。</li>
+            <li>第六卷：六卷一至九、六卷目录及备份文件。</li>
+          </ul>
+          <p class="small muted">CDR 文件需专业软件打开，网页先放卷目说明；后续可提供网盘下载入口。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>原松滋第一卷 <span>70 张 JPG，约 14.68MB</span></summary>
+        <div class="archive-body">
+          <p>该组为“原松滋第一卷”影印 JPG 资料，可作为松滋镇氏谱序、世系和历史资料的基础底稿。当前文件为 0首页.jpg 至 69.jpg，共 70 张。</p>
+          <p>建议放入“谱序公示栏”的松滋历代谱序和“族谱查询”的松滋支系资料中，并保留原图以便族人校对。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>宗谱格式字形 <span>12 个文件，约 67.83MB</span></summary>
+        <div class="archive-body">
+          <p>该组用于保持宗谱排版风格和字形一致，包含族谱格式 CDR 及多种字体文件。</p>
+          <ul>
+            <li>常用字体：simfang.ttf、simhei.ttf、simkai.ttf、simsun.ttc。</li>
+            <li>书法/行楷/隶书类字体：全新硬笔行书简、微软简行楷、微软简隶书等。</li>
+            <li>格式文件：族谱格式.cdr。</li>
+          </ul>
+          <p class="small muted">字体文件涉及版权和安装问题，公开页只做资料说明；实际使用由修谱编辑人员本地安装。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>视频资料 <span>颁谱大会与定稿视频</span></summary>
+        <div class="archive-body">
+          <p>已确认的视频资料包括：</p>
+          <ul>
+            <li>5颁谱大会盛况.mpg：约 214MB。</li>
+            <li>第5次 定稿.wmv：约 610MB。</li>
+          </ul>
+          <p>视频体积较大，不适合直接塞进单个网页文件。建议后续上传到网盘、视频号或云存储，网页中放播放入口和资料说明。</p>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>公开信与讲话 <span>含公开信、发行讲话、修谱序、合谱序等</span></summary>
+        <div class="archive-body">
+          <h4>给镇氏族人的公开信摘要</h4>
+          <p>公开信提出：国有国史、地方有县志，家族也应有族谱。镇氏族人应共同寻找根源、核清族别、整理世系，在全国范围内搜集资料，做到真实准确，并通过功德簿记载族人贡献。</p>
+          <h4>壬辰年镇氏合谱序摘要</h4>
+          <p>合谱序说明松滋、咸宁均为辛九公后代，本为一脉之根，同宗共祖。2012 年两地理事会就续修宗谱和派行统一反复商讨，最终从第三十世开始统一使用新派行：“承先继后、耀祖荣光、文能守典、武可卫邦、智仁和勇、兰桂生香、功德泽远、福禄攸长”。</p>
+          <h4>镇氏渊源初探摘要</h4>
+          <p>《镇氏渊源初探》记述镇姓分布于湖北松滋、咸宁、沙市、枝江、宜都、公安、五峰，以及湖南、四川、江苏、北京、上海、深圳等地；文中引用《康熙字典》“镇”字条关于镇姓的记载，并围绕镇海公、辛九公世系和松滋、咸宁迁徙作进一步探讨。</p>
+          <div class="archive-text">可确认资料清单：
+- 征越寄语
+- 给镇氏族人的公开信
+- 宗谱发行大会讲话
+- 甲午年修谱序
+- 壬辰年镇氏合谱序
+- 镇氏渊源初探
+- 镇海简介
+- 镇姓家族爱心互助基金会资料</div>
+        </div>
+      </details>
+      <details class="archive-panel">
+        <summary>通讯录完整版 <span>含通讯录、派行表、事业资料</span></summary>
+        <div class="archive-body">
+          <p>该组资料含《镇氏族人通讯录简编》相关文档、通讯录封面、通讯录新增资料、辈分派行列表、咸宁麻塘风湿病医院资料等。</p>
+          <h4>派行资料</h4>
+          <p>已录入“镇子派行列表”和合谱后统一派行。该资料应同时放在“族谱查询”和“谱序公示”中，方便族人查找自己的世代坐标。</p>
+          <h4>通讯录公开原则</h4>
+          <p>通讯录含姓名、地址、电话、邮箱或 QQ 等个人信息。公开网页建议展示地区范围、分会名称、负责人公开信息和资料说明；个人电话、住址等需本人或分会确认后再公开。</p>
+          <h4>事业资料</h4>
+          <p>资料中收录咸宁麻塘风湿病医院简介和“镇氏风湿病马钱子疗法”相关内容，可放入“当代名人”“家族事业”“非遗传承”栏目继续整理。</p>
+        </div>
+      </details>
       <div class="grid" style="margin-top:22px">
         <article class="card">
           <h3>镇氏族人公开信摘要</h3>
@@ -385,6 +489,6 @@
       </div>
     </section>
   </main>
-  <footer><strong>镇氏家园</strong><br><span>以镇氏家族志保存来处，以网上家园联络当下，凝聚宗亲，传承家风。</span></footer>
+  <footer><strong>镇氏家园</strong><br><span>以镇氏家族志保存来处，以网上家园联络当下，凝聚宗亲，传承家风。</span><br><span>资料更新时间：2026-07-03</span></footer>
 </body>
 </html>
