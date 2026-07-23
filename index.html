@@ -12,7 +12,7 @@
     nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}a{color:inherit;text-decoration:none}.textlink{color:var(--red);font-weight:700;border-bottom:1px solid rgba(166,66,47,.35)}
     .hero{padding:88px 6vw 90px;color:#fff;background:linear-gradient(120deg,rgba(40,28,20,.94),rgba(111,39,30,.88)),radial-gradient(circle at 50% 30%,rgba(181,133,53,.55),transparent 28%)}
     .hero h1{margin:0 0 14px;font:700 clamp(48px,10vw,104px) KaiTi,serif}.hero p{max-width:820px;font-size:20px;color:#fff4e6}
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:11px 20px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:700}.btn.primary{background:var(--red);border-color:var(--red)}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:11px 20px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:700}.btn.primary{background:var(--red);border-color:var(--red)}.btn.gold{background:var(--gold);border-color:var(--gold);color:#2b2018}
     section{padding:58px 6vw;border-bottom:1px solid var(--line)}.k{color:var(--gold);font-weight:700;font-size:13px}h2{font-size:34px;margin:6px 0 16px}h3{font-size:22px;margin:0 0 10px}
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two{display:grid;grid-template-columns:.88fr 1.12fr;gap:32px;align-items:start}
     .card,.paper{background:#fffaf4;border:1px solid var(--line);padding:24px;box-shadow:0 8px 24px rgba(40,28,20,.07)}.paper{max-width:1080px;background:#fffaf1;border-color:rgba(181,133,53,.35);padding:34px}
@@ -44,7 +44,7 @@
       <div class="k" id="home">镇氏族人共同的网上家园</div>
       <h1>镇氏家园</h1>
       <p>以“镇氏家族志”为资料核心，汇集祠堂文化、族谱公示、家族传承、族亲通讯、留言建议和当代动态，让族人浏览后能找到自己的来处与坐标。</p>
-      <div class="btns"><a class="btn primary" href="#genealogy">查看族谱</a><a class="btn" href="#messages">提出建议</a></div>
+      <div class="btns"><a class="btn primary" href="#genealogy">家谱查询</a><a class="btn gold" href="#family-book">打开家谱原图</a><a class="btn" href="#messages">提出建议</a></div>
       <div class="portal">
         <a href="#hall"><strong>祠堂文化</strong><span>家风、祠堂、祭祖与宗亲活动。</span></a>
         <a href="#memorial"><strong>祭祖专栏</strong><span>网上立碑、献花上香、功德簿。</span></a>
@@ -52,7 +52,7 @@
         <a href="#preface"><strong>谱序公示</strong><span>松滋、咸宁及合谱后序。</span></a>
         <a href="#archive"><strong>资料馆</strong><span>宗谱文件、照片、视频和修谱资料。</span></a>
       </div>
-      <div class="paper notice green" style="margin-top:22px">
+      <div class="paper notice green" id="family-book" style="margin-top:22px">
         <h3>家谱查询快捷入口</h3>
         <p>已上传宗谱网页阅读版，族人可直接打开各卷影印页，查看原图内容。</p>
         <div class="reader-links">
