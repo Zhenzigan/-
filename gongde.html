@@ -2052,6 +2052,12 @@
     search.addEventListener('input', applyFilter);
     document.getElementById('clearSearch').addEventListener('click', () => { search.value = ''; year = 'all'; buttons.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all')); applyFilter(); search.focus(); });
     buttons.forEach(button => button.addEventListener('click', () => { year = button.dataset.filter; buttons.forEach(b => b.classList.toggle('active', b === button)); applyFilter(); }));
+    const requestedYear = new URLSearchParams(location.search).get('year');
+    if (buttons.some(button => button.dataset.filter === requestedYear)) {
+      year = requestedYear;
+      buttons.forEach(button => button.classList.toggle('active', button.dataset.filter === year));
+      applyFilter();
+    }
   </script>
 </body>
 </html>
