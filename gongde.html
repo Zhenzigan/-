@@ -15,6 +15,7 @@
     main{width:min(1180px,88vw);margin:0 auto;padding:40px 0 70px}.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:28px}.panel,.year-card{background:#fffaf4;border:1px solid var(--line);box-shadow:0 8px 24px rgba(40,28,20,.06);padding:24px}
     .summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.summary-grid div{background:#fff;border:1px solid var(--line);padding:15px}.summary-grid b{display:block;color:var(--red);font-size:24px}.summary-grid span{font-size:13px;color:var(--muted)}
     .tools{position:sticky;top:68px;z-index:4;background:rgba(251,246,237,.96);padding:12px 0 18px;backdrop-filter:blur(10px)}.search{display:flex;gap:10px}.search input{flex:1;min-width:0;padding:13px 15px;border:1px solid var(--line);background:#fff;font:inherit}.search button{border:0;background:var(--red);color:#fff;padding:0 20px;font-weight:800;cursor:pointer}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.filter{border:1px solid var(--line);background:#fff;padding:7px 13px;cursor:pointer}.filter.active{background:var(--green);color:#fff;border-color:var(--green)}
+    .precise-results{display:none;margin:0 0 20px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(40,28,20,.06)}.precise-results.open{display:block}.result-title{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:800}.result-title span{color:var(--red)}.result-list{display:grid;max-height:440px;overflow:auto}.result-item{appearance:none;width:100%;border:0;border-bottom:1px solid var(--line);background:#fff;text-align:left;padding:13px 18px;cursor:pointer;font:inherit;color:var(--ink)}.result-item:hover,.result-item:focus{background:#fff7e8;outline:2px solid var(--gold);outline-offset:-2px}.result-item b{display:inline-block;min-width:56px;color:var(--red)}.result-item small{display:block;margin-left:60px;color:var(--muted)}.match-flash{animation:matchFlash 1.8s ease}.row-match{background:#fff0bd!important}@keyframes matchFlash{0%,100%{box-shadow:0 8px 24px rgba(40,28,20,.06)}40%{box-shadow:0 0 0 4px rgba(181,133,53,.55)}}
     .year-card{margin:16px 0}.year-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}.year-head h2{margin:5px 0 4px;font-size:25px}.year-head p{margin:0;color:var(--muted)}.year-badge{display:inline-block;background:var(--red);color:#fff;padding:3px 10px;font-weight:800}.year-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;min-width:260px}.year-stats span{background:#fff;border:1px solid var(--line);padding:12px;color:var(--muted);font-size:12px}.year-stats b{display:block;color:var(--ink);font-size:18px}
     details{margin-top:18px;border-top:1px solid var(--line)}summary{cursor:pointer;padding:14px 0 0;color:var(--red);font-weight:800}summary small{display:block;color:var(--muted);font-weight:400}pre{white-space:pre-wrap;word-break:break-word;background:#fbfaf6;border-left:4px solid var(--gold);padding:18px;max-height:620px;overflow:auto;font:15px/1.9 "Microsoft YaHei",sans-serif}
     .table-wrap{overflow:auto;margin-top:16px;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:680px;background:#fff}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}th{background:#f3e5d1}td:first-child{color:var(--red);font-weight:700}.notice{border-left:5px solid var(--gold)}.empty{display:none;text-align:center;padding:35px;color:var(--muted)}footer{padding:28px 6vw;background:#201815;color:#fff}
@@ -30,7 +31,8 @@
       <div class="summary-grid"><div><b>8</b><span>年度档案</span></div><div><b>2019</b><span>最早资料</span></div><div><b>2026</b><span>最新资料</span></div><div><b>全文</b><span>支持姓名检索</span></div></div>
     </section>
     <section id="annual">
-      <div class="tools"><div class="search"><input id="ledgerSearch" type="search" placeholder="搜索姓名、地区、分会或金额，例如：镇祝华、上海、500"><button id="clearSearch" type="button">清除</button></div><div class="filters" aria-label="按年份筛选"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="2026">2026</button><button class="filter" data-filter="2025">2025</button><button class="filter" data-filter="2024">2024</button><button class="filter" data-filter="2023">2023</button><button class="filter" data-filter="2022">2022</button><button class="filter" data-filter="2021">2021</button><button class="filter" data-filter="2020">2020</button><button class="filter" data-filter="2019">2019</button></div></div>
+      <div class="tools"><div class="search"><input id="ledgerSearch" type="search" placeholder="输入完整姓名可精确定位，例如：镇祝华"><button id="clearSearch" type="button">清除</button></div><div class="filters" aria-label="按年份筛选"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="2026">2026</button><button class="filter" data-filter="2025">2025</button><button class="filter" data-filter="2024">2024</button><button class="filter" data-filter="2023">2023</button><button class="filter" data-filter="2022">2022</button><button class="filter" data-filter="2021">2021</button><button class="filter" data-filter="2020">2020</button><button class="filter" data-filter="2019">2019</button></div></div>
+      <div class="precise-results" id="preciseResults" aria-live="polite"><div class="result-title" id="resultTitle"></div><div class="result-list" id="resultList"></div></div>
       <div id="yearList">
         <article class="year-card" data-year="2026" data-search="2026 2026年镇氏功德簿 按长三角、松滋西斋、新江口、重庆巫山、荆州、花园洲、珠三角、宜昌、武汉、公安等分会整理；当前名录以所提供文件为准。 1）长三角分会：
 镇学初	1000
@@ -1970,17 +1972,82 @@
     const cardsEls = [...document.querySelectorAll('.year-card')];
     const buttons = [...document.querySelectorAll('.filter')];
     const empty = document.getElementById('empty');
+    const preciseResults = document.getElementById('preciseResults');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultList = document.getElementById('resultList');
     let year = 'all';
+    const normalize = value => value.toLowerCase().replace(/[\s,，。:：;；·()（）]/g, '');
+    const entries = [];
+    cardsEls.forEach(card => {
+      const cardYear = card.dataset.year;
+      const pre = card.querySelector('pre');
+      if (pre) {
+        let group = '';
+        const lines = pre.textContent.split('\n');
+        lines.forEach((raw, lineIndex) => {
+          const text = raw.trim();
+          if (!text) return;
+          if (text.includes('分会') && text.length < 32) group = text.replace(/^[一二三四五六七八九十十一十二0-9：:、）).\s]+/, '');
+          if (/\d/.test(text) && !/^共/.test(text)) entries.push({ year: cardYear, text, group, card, pre, lineIndex, lineCount: lines.length });
+        });
+      }
+      card.querySelectorAll('tbody tr').forEach(row => {
+        entries.push({ year: cardYear, text: row.innerText.trim().replace(/\s+/g, ' ｜ '), group: '表格记录', card, row });
+      });
+    });
+    function goToEntry(entry) {
+      cardsEls.forEach(card => card.classList.remove('match-flash'));
+      document.querySelectorAll('.row-match').forEach(row => row.classList.remove('row-match'));
+      entry.card.hidden = false;
+      const details = entry.card.querySelector('details');
+      if (details) details.open = true;
+      entry.card.classList.add('match-flash');
+      if (entry.row) {
+        entry.row.classList.add('row-match');
+        entry.row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        entry.card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+          const max = Math.max(0, entry.pre.scrollHeight - entry.pre.clientHeight);
+          entry.pre.scrollTop = max * entry.lineIndex / Math.max(1, entry.lineCount - 1);
+        }, 350);
+      }
+    }
+    function renderPreciseResults(q) {
+      resultList.textContent = '';
+      if (!q) { preciseResults.classList.remove('open'); return; }
+      const matches = entries.filter(entry => (year === 'all' || entry.year === year) && normalize(entry.text).includes(q));
+      resultTitle.textContent = '';
+      const count = document.createElement('span');
+      count.textContent = `${matches.length} 条`;
+      resultTitle.append('精确匹配到 ', count, ' 记录（点击结果可定位原文）');
+      matches.slice(0, 100).forEach(entry => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'result-item';
+        const badge = document.createElement('b');
+        badge.textContent = entry.year;
+        const line = document.createElement('span');
+        line.textContent = entry.text;
+        const group = document.createElement('small');
+        group.textContent = entry.group || '年度名录';
+        button.append(badge, line, group);
+        button.addEventListener('click', () => goToEntry(entry));
+        resultList.appendChild(button);
+      });
+      preciseResults.classList.add('open');
+    }
     function applyFilter() {
-      const q = search.value.trim().toLowerCase().replace(/\s+/g, '');
+      const q = normalize(search.value.trim());
       let visible = 0;
       cardsEls.forEach(card => {
-        const haystack = (card.dataset.search || '').toLowerCase().replace(/\s+/g, '');
+        const haystack = normalize(card.dataset.search || '');
         const show = (year === 'all' || card.dataset.year === year) && (!q || haystack.includes(q));
         card.hidden = !show;
         if (show) visible++;
       });
       empty.style.display = visible ? 'none' : 'block';
+      renderPreciseResults(q);
     }
     search.addEventListener('input', applyFilter);
     document.getElementById('clearSearch').addEventListener('click', () => { search.value = ''; year = 'all'; buttons.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all')); applyFilter(); search.focus(); });
@@ -1988,3 +2055,4 @@
   </script>
 </body>
 </html>
+
