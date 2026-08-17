@@ -1992,7 +1992,7 @@
         });
       }
       card.querySelectorAll('tbody tr').forEach(row => {
-        entries.push({ year: cardYear, text: row.innerText.trim().replace(/\s+/g, ' ｜ '), group: '表格记录', card, row });
+        entries.push({ year: cardYear, text: row.textContent.trim().replace(/\s+/g, ' ｜ '), group: '表格记录', card, row });
       });
     });
     function goToEntry(entry) {
