@@ -159,13 +159,13 @@
       <div class="k">族谱查询</div><h2>家族传承树状图</h2>
       <div class="name-search" id="name-search">
         <h3>姓名搜索定位</h3>
-        <p class="muted">输入族人姓名或支系名，可查询其所在卷别、支系表和资料位置。现阶段优先依据已整理的宗谱世系表建立索引，识别不准的资料暂不录入。</p>
+        <p class="muted">输入族人姓名或支系名，可查询其所在卷别、支系表和资料位置。姓名带不带“镇”姓都可以搜索，例如“镇祥华”和“祥华”会按同一姓名查找。</p>
         <div class="name-search-form">
           <input id="nameSearchInput" type="search" placeholder="例如：镇祝华、镇起书、真章、祥华" autocomplete="off">
           <button type="button" id="nameSearchButton">搜索姓名</button>
         </div>
         <div id="nameSearchResults" class="search-results" aria-live="polite"></div>
-        <p class="small muted">说明：已上传的宗谱原图仍可在下方直接阅读；Excel 世系表中的姓名先定位到“卷别+支系表+行附近”，后续逐页校对后可继续补成精确页码。</p>
+        <p class="small muted">说明：当前姓名索引共 1,684 条，主要来自卷三十一至卷三十四及部分人物资料。已上传的宗谱原图仍可在下方直接阅读；尚未建立文字索引的影印页，需要逐页校对后继续补录。</p>
       </div>
       <div class="paper notice green">
         <h3>家谱查询快捷入口</h3>
@@ -761,13 +761,35 @@
         box.innerHTML = '<p class="search-empty">\u8bf7\u8f93\u5165\u59d3\u540d\u6216\u652f\u7cfb\u540d\uff0c\u4f8b\u5982\u201c\u9547\u795d\u534e\u201d\u201c\u8d77\u4e66\u201d\u201c\u7965\u534e\u201d\u3002</p>';
         return;
       }
-      const clean = q.replace(/\s+/g, '');
-      const exact = genealogyNameIndex.filter(item => item.name === clean);
+      const normalizeSearchText = value => String(value || '').replace(/[\s·•.，,。:：;；()（）\-—_]/g, '');
+      const familyNameCore = value => {
+        const normalized = normalizeSearchText(value);
+        return normalized.startsWith('镇') ? normalized.slice(1) : normalized;
+      };
+      const clean = normalizeSearchText(q);
+      const queryCore = familyNameCore(clean);
+      const exact = genealogyNameIndex.filter(item => {
+        const itemName = normalizeSearchText(item.name);
+        return itemName === clean || familyNameCore(itemName) === queryCore;
+      });
       const candidates = exact.length ? exact : genealogyNameIndex.filter(item => {
-        return item.name.includes(clean) || item.source.includes(clean) || item.volume.includes(clean);
+        const itemName = normalizeSearchText(item.name);
+        const itemCore = familyNameCore(itemName);
+        const source = normalizeSearchText(item.source);
+        const volume = normalizeSearchText(item.volume);
+        return itemCore.includes(queryCore) || (itemCore.length >= 2 && queryCore.includes(itemCore)) || source.includes(clean) || volume.includes(clean);
       });
       const hits = candidates.sort((a, b) => {
-        const score = item => (item.name === clean ? 0 : item.name.startsWith(clean) ? 1 : item.source.includes(clean) ? 2 : item.name.includes(clean) ? 3 : 4);
+        const score = item => {
+          const itemName = normalizeSearchText(item.name);
+          const itemCore = familyNameCore(itemName);
+          if (itemName === clean) return 0;
+          if (itemCore === queryCore) return 1;
+          if (itemCore.startsWith(queryCore)) return 2;
+          if (normalizeSearchText(item.source).includes(clean)) return 3;
+          if (itemCore.includes(queryCore)) return 4;
+          return 5;
+        };
         return score(a) - score(b);
       }).slice(0, 20);
       if (!hits.length) {
