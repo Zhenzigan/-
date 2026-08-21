@@ -762,9 +762,11 @@
         return;
       }
       const clean = q.replace(/\s+/g, '');
-      const hits = genealogyNameIndex.filter(item => {
-        return item.name.includes(clean) || clean.includes(item.name) || item.source.includes(clean) || item.volume.includes(clean);
-      }).sort((a, b) => {
+      const exact = genealogyNameIndex.filter(item => item.name === clean);
+      const candidates = exact.length ? exact : genealogyNameIndex.filter(item => {
+        return item.name.includes(clean) || item.source.includes(clean) || item.volume.includes(clean);
+      });
+      const hits = candidates.sort((a, b) => {
         const score = item => (item.name === clean ? 0 : item.name.startsWith(clean) ? 1 : item.source.includes(clean) ? 2 : item.name.includes(clean) ? 3 : 4);
         return score(a) - score(b);
       }).slice(0, 20);
